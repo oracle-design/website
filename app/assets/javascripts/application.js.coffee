@@ -7,6 +7,8 @@
 #= require _plugins
 #= require _app-base
 
+mq = window.matchMedia('(min-width: 500px)')
+
 class OddDesign.CanvasController
   constructor: ->
     @canvas = $('[data-behavior="canvas"]')
