@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150825182426) do
     t.string   "email"
     t.string   "name"
     t.integer  "project_type_cd"
-    t.integer  "buget_range_cd"
+    t.integer  "budget_range_cd"
     t.text     "description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

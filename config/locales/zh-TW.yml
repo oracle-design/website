@@ -263,3 +263,15 @@ zh-TW:
       not_saved:
         one: 有一個錯誤導致 %{resource} 不能被儲存：
         other: 有 %{count} 個錯誤導致 %{resource} 不能被儲存：
+
+  enums:
+    project_type:
+      website_development: '網站系統開發 Website Development'
+      website_design: '網站視覺規劃 Website Visual Design'
+      identity_design: '整體視覺設計 Identity Design'
+      marketing_strategies: '行銷策略 Marketing Strategies'
+    budget_range:
+      two_hundred_thousand: '200,000 ↑'
+      three_hundred_thousand: '300,000'
+      six_hundred_thousand: '600,000'
+      one_million: '1,000,000'

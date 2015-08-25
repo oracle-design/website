@@ -4,7 +4,7 @@ class CreateServiceForms < ActiveRecord::Migration
       t.string :email
       t.string :name
       t.integer :project_type_cd
-      t.integer :buget_range_cd
+      t.integer :budget_range_cd
       t.text :description
 
       t.timestamps null: false
