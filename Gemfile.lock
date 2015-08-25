@@ -365,6 +365,7 @@ GEM
       activesupport (>= 3.0.0)
     simple_enum (2.1.1)
       activesupport (>= 4.0.0)
+    slack-notifier (1.2.1)
     slackistrano (0.1.10)
       capistrano (>= 3.0.1)
       json
@@ -465,6 +466,7 @@ DEPENDENCIES
   settingslogic
   shoulda-matchers
   simple_enum
+  slack-notifier
   slackistrano
   spring
   spring-commands-rspec

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'prototype#index'
+  resources :service_forms, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
