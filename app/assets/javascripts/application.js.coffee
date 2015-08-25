@@ -14,7 +14,7 @@ class OddDesign.CanvasController
     @worksBtn = $('[data-behavior="to-works"]')
     @contactBtn = $('[data-behavior="to-contact"]')
     @socialBtn = $('[data-behavior="to-social"]')
-    @closeBtn = @canvas.find('[data-behavior="close-btn"]')
+    @closeBtn = $('[data-behavior="close-btn"]')
     @setEvent()
 
   setEvent: ->
@@ -25,20 +25,28 @@ class OddDesign.CanvasController
     @socialBtn.on 'click', @moveToSocial
 
   moveToMember: =>
-    @resetPosition(@canvas)
+    @resetPosition()
+    @showCloseBtn()
     @canvas.addClass 'top'
 
   moveToWorks: =>
-    @resetPosition(@canvas)
+    @resetPosition()
+    @showCloseBtn()
     @canvas.addClass 'right'
 
   moveToContact: =>
-    @resetPosition(@canvas)
+    @resetPosition()
+    @showCloseBtn()
     @canvas.addClass 'bottom'
 
   moveToSocial: =>
-    @resetPosition(@canvas)
+    @resetPosition()
+    @showCloseBtn()
     @canvas.addClass 'left'
+
+  showCloseBtn: =>
+    @closeBtn.fadeIn('slow')
 
   resetPosition: =>
     @canvas.removeClass 'top right bottom left'
+    @closeBtn.fadeOut('slow')
