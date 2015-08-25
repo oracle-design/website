@@ -34,6 +34,79 @@
       <!-- contact page -->
       <section class="contact-page">
         <div class="close-btn" data-behavior="close-btn"></div>
+
+        <div class="contact-info-wrapper">
+          <h2 class="title">CONTACT US</h2>
+          <ul>
+            <li class="info-item">
+              <span class="info-title-col">
+                Cell
+              </span>
+              <span class="content-col">
+                +886-910-273-948
+              </span>
+            </li>
+            <li class="info-item">
+              <span class="info-title-col">
+                Email
+              </span>
+              <span class="content-col">
+                service@oddesign.expert
+              </span>
+            </li>
+            <li class="info-item">
+              <span class="info-title-col">
+                Time
+              </span>
+              <span class="content-col">
+                Mon-Fri 10:00-20:00
+              </span>
+            </li>
+            <li class="info-item">
+              <span class="info-title-col">
+                Addr
+              </span>
+              <span class="content-col">
+                台北市松山區八德路三段158巷20弄12-1號
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <h2 class="title">CONTACT FORM</h2>
+          <form action="#">
+            <div class="input-field">
+              <input id="email" type="email" class="validate">
+              <label for="email">E-mail</label>
+            </div>
+            <div class="input-field">
+              <input id="name" type="text" class="validate">
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field col s12">
+              <select>
+                <option value="" disabled selected>選擇專案類型</option>
+                <option value="1">網站系統開發 Website Development</option>
+                <option value="2">網站系統開發 Website Development</option>
+                <option value="3">整體視覺設計 Identity Design</option>
+                <option value="4">行銷策略 Marketing Strategies</option>
+              </select>
+              <label>Project Type</label>
+            </div>
+            <div class="input-field col s12">
+              <select>
+                <option value="" disabled selected>選擇預算範圍</option>
+                <option value="1">NT 200,000 ↑</option>
+                <option value="2">NT 300,000</option>
+                <option value="3">NT 600,000</option>
+                <option value="4">NT 1,000,000</option>
+              </select>
+              <label>Budget Range</label>
+            </div>
+            <button type='submit' class="submit-btn waves-effect waves-dark btn">SUBMIT</button>
+          </form>
+        </div>
       </section>
 
       <!-- social page -->
@@ -48,5 +121,8 @@
 <%= content_for :handwrite_js do %>
   <script>
     $(document).ready(new OddDesign.CanvasController);
+    $(document).ready(function() {
+      $('select').material_select();
+    });
   </script>
 <% end %>

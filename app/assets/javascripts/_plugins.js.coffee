@@ -12,6 +12,7 @@
 #= require bootstrap
 #= require growlyflash
 #= require sweet-alert-confirm
+#= require materialize-sprockets
 #= require turbolinks
 
 

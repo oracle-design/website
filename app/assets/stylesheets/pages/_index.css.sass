@@ -17,25 +17,74 @@
       max-width: 100%
 
 .members-page
-  position: absolute
-  height: 100%
-  width: 100%
+  @extend %page-style
   top: -100%
 
 .works-page
-  position: absolute
-  height: 100%
-  width: 100%
+  @extend %page-style
   left: 100%
 
 .contact-page
-  position: absolute
-  height: 100%
-  width: 100%
+  $form-width: 380px
+
+  @extend %page-style
   top: 100%
+  // background-color: #fff
+  .contact-info-wrapper, .contact-form-wrapper
+    @extend %m0auto
+    width: $form-width
+    font-weight: 100
+    ul
+      +reset-list-style
+      +reset-box-model
+      font-size: $fz-s
+    .info-item
+      display: inline-block
+      width: 100%
+      margin-bottom: 1em
+      &:last-child
+        border-bottom: 1px solid $warm-grey
+        padding-bottom: 3em
+    .title
+      margin-bottom: 2em
+      font-size: $fz-m
+      font-weight: 100
+    .info-title-col
+      +span(2.5)
+      text-align: right
+    .content-col
+      +span(9.5)
+      padding-left: 2em
+    .submit-btn
+      width: 100%
+      margin-top: 2em
+      background: none
+      color: $greyish-brown
+      +box-shadow(none)
+      border: 1px solid $greyish-brown
+    .dropdown-content
+      +box-shadow(none)
+      border: 1px solid $warm-grey
+      li
+        border-bottom: 1px solid #ccc
+        line-height: 12px
+        span
+          color: #555
+          font-size: $fz-s
+        &:first-child
+          text-align: center
+        &:last-child
+          border-bottom: none
+    .input-field input:focus
+      border-bottom: 1px solid #000
+      +box-shadow(none)
+    .input-field input:focus + label
+        color: #000
+
+
+
+
 
 .social-page
-  position: absolute
-  height: 100%
-  width: 100%
+  @extend %page-style
   left: -100%
