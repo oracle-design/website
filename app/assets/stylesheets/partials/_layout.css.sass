@@ -14,3 +14,53 @@
 
 %m0auto
   margin: 0 auto
+
+body
+  font-family: Helvetica, Arial, sans-serif
+  overflow: hidden
+
+.odd-menu-item
+  position: absolute
+  +transition(all, .3s)
+  .item
+    display: block
+    height: $view-padding
+    line-height: $view-padding
+    padding: 0 1em
+    color: $greyish-brown
+    font-size: 8px
+    text-align: center
+    text-decoration: none
+
+  // 四個方向
+  &.top
+    left: 50%
+    +transform(translateX(-50%))
+  &.right
+    top: 50%
+    right: 0
+    +transform(rotate(90deg) translateY(-20%) translateX(-35%))
+  &.bottom
+    bottom: 0
+    left: 50%
+    +transform(translateX(-50%))
+  &.left
+    top: 50%
+    +transform(rotate(-90deg) translateY(-30%) translateX(30%))
+
+  &:hover
+    +text-shadow(15px 15px 0 lighten($greyish-brown, 50), -15px -15px 0 lighten($greyish-brown, 50))
+
+
+.odd-content-wrapper
+  position: absolute
+  top: $view-padding
+  right: $view-padding
+  bottom: $view-padding
+  left: $view-padding
+  border: 1px solid $warm-grey
+
+.odd-content-inner
+  position: relative
+  height: 100%
+  background-color: #eee
