@@ -1,14 +1,52 @@
 <!-- menu -->
-<div class="odd-menu-item top"><a class="item top" href="#">WE ARE</a></div>
-<div class="odd-menu-item right"><a class="item right" href="#">WORKS</a></div>
-<div class="odd-menu-item bottom"><a class="item bottom" href="#">CONTACT</a></div>
-<div class="odd-menu-item left"><a class="item left" href="#">THINKING</a></div>
+<div class="odd-menu-item top"><a data-behavior="to-members" class="item top" href="#">WE ARE</a></div>
+<div class="odd-menu-item right"><a data-behavior="to-works" class="item right" href="#">WORKS</a></div>
+<div class="odd-menu-item bottom"><a data-behavior="to-contact" class="item bottom" href="#">CONTACT</a></div>
+<div class="odd-menu-item left"><a data-behavior="to-social" class="item left" href="#">THINKING</a></div>
 
 <!-- main content wrapper -->
 <div class="odd-content-wrapper">
   <div class="odd-content-inner">
-    <div class="site-logo-wrapper">
-      <%= image_tag 'site-logo.png', class: 'logo' %>
+
+    <%#
+      canvas, 這個 div 把所有畫面包起來，利用控制 canvas 的絕對位置來達到在五個獨立
+      頁面中滑動切換的目的。（例如：`top: 100%` 會往下滑）
+    %>
+    <div class="pages-canvas" data-behavior="canvas">
+
+      <!-- landing page -->
+      <section class="landing-page">
+        <div class="logo-wrapper">
+          <%= image_tag 'site-logo.png', class: 'logo' %>
+        </div>
+      </section>
+
+      <!-- members page -->
+      <section class="members-page">
+        <div class="close-btn" data-behavior="close-btn"></div>
+      </section>
+
+      <!-- works page -->
+      <section class="works-page">
+        <div class="close-btn" data-behavior="close-btn"></div>
+      </section>
+
+      <!-- contact page -->
+      <section class="contact-page">
+        <div class="close-btn" data-behavior="close-btn"></div>
+      </section>
+
+      <!-- social page -->
+      <section class="social-page">
+        <div class="close-btn" data-behavior="close-btn"></div>
+      </section>
     </div>
+
   </div>
 </div>
+
+<%= content_for :handwrite_js do %>
+  <script>
+    $(document).ready(new OddDesign.CanvasController);
+  </script>
+<% end %>
