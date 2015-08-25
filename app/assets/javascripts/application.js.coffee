@@ -23,6 +23,26 @@ class OddDesign.CanvasController
     @worksBtn.on 'click', @moveToWorks
     @membersBtn.on 'click', @moveToMember
     @socialBtn.on 'click', @moveToSocial
+    @arrowKeyDown()
+
+  arrowKeyDown: =>
+    $(window).on 'keydown', (e)=>
+      switch e.which
+        when 38
+          # up
+          @moveToMember()
+        when 39
+          # right
+          @moveToWorks()
+        when 40
+          # down
+          @moveToContact()
+        when 37
+          # left
+          @moveToSocial()
+        else
+          return
+      e.preventDefault()
 
   moveToMember: =>
     @resetPosition()
