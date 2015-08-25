@@ -20,7 +20,7 @@ class OddDesign.CanvasController
     @setEvent()
 
   setEvent: ->
-    @closeBtn. on 'click', @resetPosition
+    @closeBtn. on 'click', @backToLanding
     @contactBtn.on 'click', @moveToContact
     @worksBtn.on 'click', @moveToWorks
     @membersBtn.on 'click', @moveToMember
@@ -66,9 +66,12 @@ class OddDesign.CanvasController
     @showCloseBtn()
     @canvas.addClass 'left'
 
+  backToLanding: =>
+    @resetPosition()
+    @closeBtn.fadeOut('slow')
+
   showCloseBtn: =>
     @closeBtn.fadeIn('slow')
 
   resetPosition: =>
     @canvas.removeClass 'top right bottom left'
-    @closeBtn.fadeOut('slow')
