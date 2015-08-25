@@ -1,7 +1,7 @@
 # config valid only for Capistrano 3.1
 lock '~>3.4.0'
 
-set :application, 'AppName'
+set :application, 'odd-website'
 set :repo_url, 'git@repos.oddesign.expert:oracle-design/odd-website.git'
 set :deploy_to, '/home/deployer/websites/odd-website'
 

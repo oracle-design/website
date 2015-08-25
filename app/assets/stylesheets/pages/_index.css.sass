@@ -1,0 +1,17 @@
+.landing-page
+  position: absolute
+  height: 100%
+  width: 100%
+  +transition(all, .5s)
+  background-color: #eee
+  &:hover
+    background-color: #fff
+
+  .logo-wrapper
+    position: absolute
+    top: 50%
+    left: 50%
+    +transform(translate(-50%, -60%))
+    width: 202px
+    .logo
+      max-width: 100%
