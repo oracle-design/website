@@ -7,6 +7,9 @@
 #= require _plugins
 #= require _app-base
 
+$(document).ready ->
+  $('select').material_select()
+
 mq = window.matchMedia('(min-width: 500px)')
 
 class OddDesign.CanvasController
@@ -42,6 +45,9 @@ class OddDesign.CanvasController
         when 37
           # left
           @moveToSocial()
+        when 27
+          # esc
+          @backToLanding()
         else
           return
       e.preventDefault()
