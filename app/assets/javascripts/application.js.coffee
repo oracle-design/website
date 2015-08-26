@@ -7,6 +7,8 @@
 #= require _plugins
 #= require _app-base
 
+mq = window.matchMedia('(min-width: 500px)')
+
 class OddDesign.CanvasController
   constructor: ->
     @canvas = $('[data-behavior="canvas"]')
@@ -14,31 +16,62 @@ class OddDesign.CanvasController
     @worksBtn = $('[data-behavior="to-works"]')
     @contactBtn = $('[data-behavior="to-contact"]')
     @socialBtn = $('[data-behavior="to-social"]')
-    @closeBtn = @canvas.find('[data-behavior="close-btn"]')
+    @closeBtn = $('[data-behavior="close-btn"]')
     @setEvent()
 
   setEvent: ->
-    @closeBtn. on 'click', @resetPosition
+    @closeBtn. on 'click', @backToLanding
     @contactBtn.on 'click', @moveToContact
     @worksBtn.on 'click', @moveToWorks
     @membersBtn.on 'click', @moveToMember
     @socialBtn.on 'click', @moveToSocial
+    @arrowKeyDown()
+
+  arrowKeyDown: =>
+    $(window).on 'keydown', (e)=>
+      switch e.which
+        when 38
+          # up
+          @moveToMember()
+        when 39
+          # right
+          @moveToWorks()
+        when 40
+          # down
+          @moveToContact()
+        when 37
+          # left
+          @moveToSocial()
+        else
+          return
+      e.preventDefault()
 
   moveToMember: =>
-    @resetPosition(@canvas)
+    @resetPosition()
+    @showCloseBtn()
     @canvas.addClass 'top'
 
   moveToWorks: =>
-    @resetPosition(@canvas)
+    @resetPosition()
+    @showCloseBtn()
     @canvas.addClass 'right'
 
   moveToContact: =>
-    @resetPosition(@canvas)
+    @resetPosition()
+    @showCloseBtn()
     @canvas.addClass 'bottom'
 
   moveToSocial: =>
-    @resetPosition(@canvas)
+    @resetPosition()
+    @showCloseBtn()
     @canvas.addClass 'left'
+
+  backToLanding: =>
+    @resetPosition()
+    @closeBtn.fadeOut('slow')
+
+  showCloseBtn: =>
+    @closeBtn.fadeIn('slow')
 
   resetPosition: =>
     @canvas.removeClass 'top right bottom left'

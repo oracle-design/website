@@ -25,6 +25,7 @@ body
   width: 100%
   padding: 60px 0
   overflow-y: auto
+  background-color: #fff
 
 // 主選單
 .odd-menu-item
@@ -62,6 +63,18 @@ body
   &:hover
     +text-shadow(15px 15px 0 lighten($greyish-brown, 50), -15px -15px 0 lighten($greyish-brown, 50))
 
+// close btn
+.close-btn
+  display: none
+  position: fixed
+  top: 60px
+  right: 60px
+  width: 48px
+  height: 48px
+  background-image: asset-url('close-btn@2x.png')
+  +background-size(cover)
+  cursor: pointer
+  z-index: index($elements, close-btn)
 
 // 主外筐
 .odd-content-wrapper
@@ -86,22 +99,6 @@ body
   left: 0
   top: 0
   +transition(all, .5s)
-
-  section
-    .close-btn
-      position: absolute
-      top: 10px
-      right: 10px
-      width: 48px
-      height: 48px
-      opacity: 0
-      background-image: asset-url('close-btn@2x.png')
-      +background-size(cover)
-      cursor: pointer
-      +transition(opacity, .5s)
-    &:hover
-      .close-btn
-        opacity: 1
 
   &.top
     top: 100%
