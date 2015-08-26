@@ -13,7 +13,7 @@ class ServiceFormsController < ApplicationController
     ].join("\n\n")
 
     if @form.save
-      SlackNotify.new(message: message, username: '案件需求通知')
+      SlackNotify.new(message: message, username: '案件需求通知', channel: '#customers-message')
       flash[:success] = '訊息已送出，將盡快與您聯絡。'
       redirect_to :back
     else
