@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :members
   root 'prototype#index'
   resources :service_forms, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
