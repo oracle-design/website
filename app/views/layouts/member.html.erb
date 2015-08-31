@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Oracle Digital Design :: 神御數位設計 :: odd</title>
+    <meta name="description" content="odd 深度剖析客戶需求與企業文化，針對需求不同提出最精準的解決方案，從品牌設計行銷、網站建置到手機 App 開發，全面幫助每個客戶提升品牌價值與利潤。">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <%= growlyflash_static_notices %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'modernizr' %>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+  <body class='<%# "#{controller.controller_name}-#{controller.action_name}" %>'>
+      <!--[if lt IE 7]>
+          <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+      <![endif]-->
+
+  <%= render partial: 'common/header' %>
+
+  <%= yield %>
+
+  <%# render :partial => 'common/footer' %>
+
+
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, 'data-turbolinks-eval' => true %>
+  <%= yield :handwrite_js %>
+
+  </body>
+</html>
