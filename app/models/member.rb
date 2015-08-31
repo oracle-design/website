@@ -3,4 +3,6 @@ class Member < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  as_enum :profession, [:designer, :developer, :marketing]
 end

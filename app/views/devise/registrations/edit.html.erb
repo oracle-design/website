@@ -13,6 +13,10 @@
           <%= f.label :name, 'Name' %>
         </div>
         <div class="input-field">
+          <%= select :member, :profession, enum_option_pairs(Member, :profession), prompt: '選擇職業類別' %>
+          <%= f.label :profession, '專業類別' %>
+        </div>
+        <div class="input-field">
           <%= f.text_field :work_field %>
           <%= f.label :work_field, '工作領域' %>
         </div>
@@ -32,8 +36,8 @@
           <%= f.password_field :current_password, autocomplete: "off" %>
           <%= f.label :current_password, '輸入目前密碼' %>
         </div>
-        <%= button_tag(type: 'submit', class: "btn") do %>
-          更新 <i class="fa fa-edit"></i>
+        <%= button_tag(type: 'submit', class: "btn green") do %>
+          送出更新
         <% end %>
       </div>
     </div>

@@ -275,3 +275,7 @@ zh-TW:
       three_hundred_thousand: '300,000'
       six_hundred_thousand: '600,000'
       one_million: '1,000,000'
+    profession:
+      designer: '設計師'
+      developer: '工程師'
+      marketing: '市場策略分析師'
