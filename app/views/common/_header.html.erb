@@ -19,11 +19,13 @@
   <li class="divider"></li>
 
   <li>
-    <%= link_to '#' do %>
+    <%= link_to destroy_member_session_path, method: 'delete' do %>
       <i class="material-icons left">exit_to_app</i>登出
     <% end %>
   </li>
 </ul>
+
+<!-- navigation bar -->
 <nav>
   <div class="container">
     <div class="nav-wrapper">
