@@ -26,22 +26,22 @@
       <!-- members page -->
       <section class="members-page">
         <div class="member-content-wrapper">
-          <% 3.times.each do %>
+          <% @members.each do |member| %>
             <div class="content-wrapper">
               <div class="member-avatar">
                 <%= image_placeholder width: 200, height: 200, text: 'Avatar', class: 'avatar' %>
               </div>
               <div class="name">
-                <span>Win</span>
+                <span><%= member.name %></span>
               </div>
               <div class="job-icon">
                 <span><%= icon 'paint-brush', class: 'fa-2x' %></span>
               </div>
               <div class="work-field">
-                <span>Designer</span>
+                <span><%= member.work_field %></span>
               </div>
               <div class="subtitle">
-                <span>自己寫 code 的設計師</span>
+                <span><%= member.message %></span>
               </div>
               <div class="social-links">
                 <span><%= icon 'facebook-official', class: 'social-icon' %></span>
