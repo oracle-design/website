@@ -1,1 +1,26 @@
-1234
+<div class="container">
+  <table class="member-list hoverable">
+    <thead>
+      <tr>
+          <th data-field="id">Name</th>
+          <th data-field="name">工作領域</th>
+          <th data-field="price">簡述</th>
+          <th>選項</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @members.each do |member| %>
+        <tr>
+          <td><%= member.name %></td>
+          <td><%= member.work_field %></td>
+          <td><%= member.message %></td>
+          <td>
+            <a href="#" class="btn">向上移動</a>
+            <a href="#" class="btn">向下移動</a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
