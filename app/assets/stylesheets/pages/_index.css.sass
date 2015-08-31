@@ -24,8 +24,59 @@
 
 
 .members-page
+  $member-unit-width: 380px
+
   @extend %page-style
   top: -100%
+
+  .member-content-wrapper
+    @extend %m0auto
+    width: 100%
+    text-align: center
+    background-image: asset-url('member-bg@2x.png')
+    background-repeat: repeat-y
+    +background-size(1px, 1px)
+    background-position: 50%
+    color: $dark-grey
+    +breakpoint($b-mobile)
+      width: $member-unit-width
+
+  .content-wrapper
+    $member-units-distance: 70px
+    background-color: $white
+    margin-bottom: $member-units-distance
+    padding: 1em 0
+
+  .member-avatar
+    .avatar
+      width: 100px
+      +border-radius(50%)
+      border: 5px solid #ccc
+  .name
+    font-size: $fz-xl
+    font-weight: 900
+    margin-bottom: 1em
+  .work-field
+    font-size: $fz-m
+    font-weight: 500
+    margin-bottom: 1em
+  .subtitle
+    color: lighten($dark-grey, 25)
+    font-size: $fz-s
+    font-weight: 100
+    margin-bottom: 1em
+  .social-links
+    word-spacing: 8px
+  .social-icon
+    font-size: $fz-l
+    color: $warm-grey
+    +transition(all, .3s)
+    &:hover
+      color: $dark-grey
+
+
+
+
 
 .works-page
   @extend %page-style

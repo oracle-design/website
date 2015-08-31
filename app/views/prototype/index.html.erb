@@ -14,7 +14,7 @@
       canvas, 這個 div 把所有畫面包起來，利用控制 canvas 的絕對位置來達到在五個獨立
       頁面中滑動切換的目的。（例如：`top: 100%` 會往下滑）
     %>
-    <div class="pages-canvas" data-behavior="canvas">
+    <div class="pages-canvas top" data-behavior="canvas">
 
       <!-- landing page -->
       <section class="landing-page">
@@ -25,7 +25,33 @@
 
       <!-- members page -->
       <section class="members-page">
-        <div class="temp">Building...</div>
+        <div class="member-content-wrapper">
+          <% 3.times.each do %>
+            <div class="content-wrapper">
+              <div class="member-avatar">
+                <%= image_placeholder width: 200, height: 200, text: 'Avatar', class: 'avatar' %>
+              </div>
+              <div class="name">
+                <span>Win</span>
+              </div>
+              <div class="job-icon">
+                <span><%= icon 'paint-brush', class: 'fa-2x' %></span>
+              </div>
+              <div class="work-field">
+                <span>Designer</span>
+              </div>
+              <div class="subtitle">
+                <span>自己寫 code 的設計師</span>
+              </div>
+              <div class="social-links">
+                <span><%= icon 'facebook-official', class: 'social-icon' %></span>
+                <span><%= icon 'twitter-square', class: 'social-icon' %></span>
+                <span><%= icon 'github', class: 'social-icon' %></span>
+                <span><%= icon 'instagram', class: 'social-icon' %></span>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </section>
 
       <!-- works page -->
