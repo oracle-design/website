@@ -17,6 +17,18 @@ module ApplicationHelper
     image_placeholder width: 200, height: 200, text: 'no pic', class: 'avatar'
   end
 
+  def render_member_sns_link(service)
+    if service.service == :email
+      mail_to service.link, class: 'social-icon' do
+        render_social_icon(service.service)
+      end
+    else
+      link_to service.link, class: 'social-icon', target: '_blank' do
+        render_social_icon(service.service)
+      end
+    end
+  end
+
   def render_social_icon(service)
     case service
     when :email
