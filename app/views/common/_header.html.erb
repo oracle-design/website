@@ -28,6 +28,11 @@
       <ul class="right hide-on-med-and-down">
         <li class="<%= navi_menu_actived?(path: member_root_path, class_name: 'active') %>">
           <%= link_to member_root_path do %>
+            <i class="material-icons left">people</i>社群網站連結管理
+          <% end %>
+        </li>
+        <li class="<%= navi_menu_actived?(path: member_list_path, class_name: 'active') %>">
+          <%= link_to member_list_path do %>
             <i class="material-icons left">people</i>成員列表
           <% end %>
         </li>

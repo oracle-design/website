@@ -8,5 +8,5 @@ class Member < ActiveRecord::Base
 
   mount_uploader :avatar, MemberAvatarUploader
 
-  has_many :social_services
+  has_many :social_services, dependent: :destroy
 end

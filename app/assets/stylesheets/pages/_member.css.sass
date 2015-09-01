@@ -1,51 +1,67 @@
 .member-layout
   overflow: auto
-
-nav
-  .dropdown-content
-    width: 200px !important
-.login-form-wrapper
-  width: 400px
-  @extend %m0auto
-  margin-bottom: 5em
-  .input-field
-    margin-bottom: 3em
-  .login-form
-    background-color: #f5f5f5
-    padding: 2em
-    margin-top: 100px
-    +border-radius(8px)
-    +box-shadow(0 0 8px #aaa)
-  .user-avatar
-    .avatar
-      @extend %m0auto
-      display: block
-      width: 100px
-      +border-radius(50%)
-      border: 5px solid #fff
-      +box-shadow(0 0 5px #888)
-  .avatar-field
-    text-align: center
-    .select-photo
-      @extend %m0auto
-      font-size: $fz-m
-      text-align: center
-    .file-path-wrapper
-      .file-path
-        border-bottom: none
-  .title
+  & + .title
     font-size: $fz-xxl
-    text-align: center
-    margin-bottom: 2em
-  .btn
-    width: 100%
-    margin-top: 2em
-  input
-    text-align: center
+    color: #555
+    padding: .5em 0
+    border-bottom: 1px solid #555
+  nav
+    .dropdown-content
+      width: 200px !important
 
 
-.member-list
-  margin-top: 5em
-  th, td
-    text-align: center
-    padding: 1em 0
+
+  .login-form-wrapper
+    width: 400px
+    @extend %m0auto
+    margin-bottom: 5em
+    .input-field
+      margin-bottom: 3em
+    .login-form
+      background-color: #f5f5f5
+      padding: 2em
+      margin-top: 100px
+      +border-radius(8px)
+      +box-shadow(0 0 8px #aaa)
+    .user-avatar
+      .avatar
+        @extend %m0auto
+        display: block
+        width: 100px
+        +border-radius(50%)
+        border: 5px solid #fff
+        +box-shadow(0 0 5px #888)
+    .avatar-field
+      text-align: center
+      .select-photo
+        @extend %m0auto
+        font-size: $fz-m
+        text-align: center
+      .file-path-wrapper
+        .file-path
+          border-bottom: none
+    .title
+      font-size: $fz-xxl
+      text-align: center
+      margin-bottom: 2em
+    .btn
+      width: 100%
+      margin-top: 2em
+    input
+      text-align: center
+
+
+  .member-list
+    margin-top: 5em
+    th, td
+      text-align: center
+      padding: 1em 0
+
+  #new_social_service
+    .title
+      padding: .5em
+      margin-bottom: 1em
+    .input-field
+      margin: 3em 0
+    .select-wrapper
+      text-align: center

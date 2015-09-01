@@ -17,6 +17,41 @@ module ApplicationHelper
     image_placeholder width: 200, height: 200, text: 'no pic', class: 'avatar'
   end
 
+  def render_social_icon(service)
+    case service
+    when :email
+      icon 'envelope-o'
+    when :facebook
+      icon 'facebook-official'
+    when :twitter
+      icon 'twitter-square'
+    when :github
+      icon 'github'
+    when :dribbble
+      icon 'dribbble'
+    when :behance
+      icon 'behance'
+    when :'google+'
+      icon 'google-plus-square'
+    when :instagram
+      icon 'instagram'
+    when :lastfm
+      icon 'lastfm-square'
+    when :linkedin
+      icon 'linkedin'
+    when :medium
+      icon 'medium'
+    when :pinterest
+      icon 'pinterest'
+    when :tumblr
+      icon 'tumblr-square'
+    when :wordpress
+      icon 'wordpress'
+    when :youtube
+      icon 'youtube'
+    end
+  end
+
   def navi_menu_actived?(args)
     path = args[:path]
     class_name = args[:class_name] || 'actived'
