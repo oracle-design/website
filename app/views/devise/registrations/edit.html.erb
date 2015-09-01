@@ -48,7 +48,7 @@
           <%= f.password_field :current_password, autocomplete: "off" %>
           <%= f.label :current_password, '輸入目前密碼' %>
         </div>
-        <%= button_tag(type: 'submit', class: "btn green") do %>
+        <%= button_tag type: 'submit', class: "btn green", data: {disable_with: '<i class="fa fa-circle-o-notch fa-spin"></i> 資料處理中'} do %>
           送出更新
         <% end %>
       </div>
