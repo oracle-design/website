@@ -7,4 +7,6 @@ class Member < ActiveRecord::Base
   as_enum :profession, [:designer, :developer, :marketing]
 
   mount_uploader :avatar, MemberAvatarUploader
+
+  has_many :social_services
 end

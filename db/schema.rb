@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150831182135) do
+ActiveRecord::Schema.define(version: 20150901021540) do
 
   create_table "members", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -45,5 +45,15 @@ ActiveRecord::Schema.define(version: 20150831182135) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  create_table "social_services", force: :cascade do |t|
+    t.integer  "service_cd"
+    t.string   "link"
+    t.integer  "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "social_services", ["member_id"], name: "index_social_services_on_member_id"
 
 end
