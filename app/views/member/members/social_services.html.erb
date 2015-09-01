@@ -1,0 +1,64 @@
+<div class="container">
+  <h4 class="title">社群網站連結管理</h4>
+  <a href="#new_social_service" class="btn green pull-right modal-trigger"><i class="material-icons left">add</i> 新增社群連結</a>
+  <table class="member-list hoverable">
+    <thead>
+      <tr>
+          <th data-field="id">SNS</th>
+          <th data-field="name">Link</th>
+          <th>選項</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @sns_list.each do |service| %>
+        <tr>
+          <td><span><%= service.service.to_s %></span></td>
+          <td><%= link_to service.link, service.link %></td>
+          <td>
+            <%= link_to member_social_service_path(service),
+              class: "btn red",
+              method: :delete,
+              :data => {confirm: "您確定要刪除 #{service.service}？",
+                        :'confirm-button-text' => '確定刪除',
+                        :'cancel-button-text' => '取消',
+                        :'sweet-alert-type' => 'warning',
+                        text: '這個動作將無法復原！'} do %>
+              <i class="material-icons left">delete</i>刪除
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<!-- new social service form -->
+<div id="new_social_service" class="modal">
+  <%= form_for [:member, @new_sns] do |f| %>
+    <div class="modal-content">
+      <h5 class="title">新增社群服務</h5>
+        <div class="input-field">
+          <%= select :social_service, :service, enum_option_pairs(SocialService, :service), prompt: '選擇想新增的社群服務' %>
+          <%= f.label :service, '專業類別' %>
+        </div>
+        <div class="input-field">
+          <%= f.text_field :link, placeholder: 'http://www.facebook.com/oresama_saikyou' %>
+          <%= f.label :link, '連結位址' %>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <%= button_tag(type: 'submit', class: "waves-effect waves-green btn green", data: {disable_with: '<i class="fa fa-circle-o-notch fa-spin"></i> 資料處理中'}) do %>
+        確認新增
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= content_for :handwrite_js do %>
+  <script>
+    $(document).ready(function(){
+      $('.modal-trigger').leanModal();
+    });
+  </script>
+<% end %>

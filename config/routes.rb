@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :members, controllers: {registrations: 'registrations'}
   root 'prototype#index'
   resources :service_forms, only: [:create]
+
+  namespace :member do
+    root 'members#social_services'
+    get 'list' => 'members#index'
+    resources :social_services, only: [:create, :destroy]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

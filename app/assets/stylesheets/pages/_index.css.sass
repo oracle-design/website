@@ -24,8 +24,64 @@
 
 
 .members-page
+  $member-unit-width: 380px
+
   @extend %page-style
   top: -100%
+
+  .member-content-wrapper
+    @extend %m0auto
+    width: 100%
+    text-align: center
+    background-image: asset-url('member-bg@2x.png')
+    background-repeat: repeat-y
+    +background-size(1px, 1px)
+    background-position: 50%
+    color: $dark-grey
+    +breakpoint($b-mobile)
+      width: $member-unit-width
+
+  .content-wrapper
+    $member-units-distance: 88px
+    background-color: $white
+    margin-bottom: $member-units-distance
+    padding-top: 1.5em
+    padding-bottom: 1em
+    color: $warm-grey
+  .member-avatar
+    .avatar
+      width: 100px
+      +border-radius(50%)
+      border: 5px solid #fff
+      +box-shadow(0 0 5px #888)
+  .name
+    margin-bottom: 1em
+    font-size: $fz-xl
+    font-weight: 900
+    color: $dark-grey
+  .job-icon
+    margin-bottom: 8px
+  .work-field
+    margin-bottom: .2em
+    font-size: $fz-m
+    font-weight: 500
+  .subtitle
+    margin-bottom: 2em
+    font-size: $fz-s
+    font-weight: 100
+  .social-icon
+    margin-right: .3em
+    font-size: $fz-xl
+    color: $warm-grey
+    +transition(all, .3s)
+    &:hover
+      color: $dark-grey
+    &:last-child
+      margin-right: 0
+
+
+
+
 
 .works-page
   @extend %page-style

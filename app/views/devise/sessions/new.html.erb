@@ -1,0 +1,24 @@
+<div class="login-form-wrapper">
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="login-form">
+      <h2 class="title">ODD 成員登入</h2>
+      <div class="box">
+        <div class="input-field">
+          <%= f.email_field :email %>
+          <%= f.label :email, 'Email' %>
+        </div>
+        <div class="input-field">
+          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.label :password, '密碼' %>
+        </div>
+        <%= button_tag(type: 'submit', class: "btn") do %>
+          登入 <i class="fa fa-sign-in"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+

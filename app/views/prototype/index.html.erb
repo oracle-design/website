@@ -25,7 +25,34 @@
 
       <!-- members page -->
       <section class="members-page">
-        <div class="temp">Building...</div>
+        <div class="member-content-wrapper">
+          <% @members.each do |member| %>
+            <div class="content-wrapper">
+              <div class="member-avatar">
+                <%= render_member_avatar(member) %>
+              </div>
+              <div class="name">
+                <span><%= member.name %></span>
+              </div>
+              <div class="job-icon">
+                <span><%= render_profession_icon(member.profession) %></span>
+              </div>
+              <div class="work-field">
+                <span><%= member.work_field %></span>
+              </div>
+              <div class="subtitle">
+                <span><%= member.message %></span>
+              </div>
+              <div class="social-links">
+                <% member.social_services.each do |service| %>
+                  <%= link_to service.link, class: 'social-icon', target: '_blank' do %>
+                    <%= render_social_icon(service.service) %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </section>
 
       <!-- works page -->

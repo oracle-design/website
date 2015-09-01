@@ -1,4 +1,50 @@
-<!-- header -->
-<header>
+<!-- Dropdown Structure -->
+<ul id="user-menu" class="dropdown-content">
+  <li>
+    <%= link_to root_path do %>
+      <i class="material-icons left">home</i>回到前台
+    <% end %>
+  </li>
+  <li>
+    <%= link_to edit_member_registration_path do %>
+      <i class="material-icons left">account_box</i>個人資料
+    <% end %>
+  </li>
 
-</header>
+  <li class="divider"></li>
+
+  <li>
+    <%= link_to destroy_member_session_path, method: 'delete' do %>
+      <i class="material-icons left">exit_to_app</i>登出
+    <% end %>
+  </li>
+</ul>
+
+<!-- navigation bar -->
+<nav>
+  <div class="container">
+    <div class="nav-wrapper">
+      <span class="brand-logo">odd</span>
+      <ul class="right hide-on-med-and-down">
+        <li class="<%= navi_menu_actived?(path: member_root_path, class_name: 'active') %>">
+          <%= link_to member_root_path do %>
+            <i class="material-icons left">people</i>SNS 連結管理
+          <% end %>
+        </li>
+        <li class="<%= navi_menu_actived?(path: member_list_path, class_name: 'active') %>">
+          <%= link_to member_list_path do %>
+            <i class="material-icons left">people</i>成員列表
+          <% end %>
+        </li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="user-menu">Hi, <%= current_member.name %><i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<%= content_for :handwrite_js do %>
+  <script>
+    $(".dropdown-button").dropdown();
+  </script>
+<% end %>
