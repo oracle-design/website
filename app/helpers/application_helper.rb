@@ -12,6 +12,11 @@ module ApplicationHelper
     end
   end
 
+  def render_member_avatar(member)
+    image_tag member.avatar, class: 'avatar' if member.avatar.present?
+    image_placeholder width: 200, height: 200, text: 'no pic', class: 'avatar'
+  end
+
   def navi_menu_actived?(args)
     path = args[:path]
     class_name = args[:class_name] || 'actived'

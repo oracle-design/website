@@ -14,7 +14,7 @@
       canvas, 這個 div 把所有畫面包起來，利用控制 canvas 的絕對位置來達到在五個獨立
       頁面中滑動切換的目的。（例如：`top: 100%` 會往下滑）
     %>
-    <div class="pages-canvas top" data-behavior="canvas">
+    <div class="pages-canvas" data-behavior="canvas">
 
       <!-- landing page -->
       <section class="landing-page">
@@ -44,10 +44,10 @@
                 <span><%= member.message %></span>
               </div>
               <div class="social-links">
-                <span><%= icon 'facebook-official', class: 'social-icon' %></span>
-                <span><%= icon 'twitter-square', class: 'social-icon' %></span>
-                <span><%= icon 'github', class: 'social-icon' %></span>
-                <span><%= icon 'instagram', class: 'social-icon' %></span>
+                <span class="social-icon"><%= icon 'facebook-official' %></span>
+                <span class="social-icon"><%= icon 'twitter-square' %></span>
+                <span class="social-icon"><%= icon 'github' %></span>
+                <span class="social-icon"><%= icon 'instagram' %></span>
               </div>
             </div>
           <% end %>
