@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def render_member_avatar(member)
-    image_tag member.avatar, class: 'avatar' if member.avatar.present?
+    return image_tag member.avatar, class: 'avatar' if member.avatar.present?
     image_placeholder width: 200, height: 200, text: 'no pic', class: 'avatar'
   end
 

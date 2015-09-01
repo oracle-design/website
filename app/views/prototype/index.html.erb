@@ -29,7 +29,7 @@
           <% @members.each do |member| %>
             <div class="content-wrapper">
               <div class="member-avatar">
-                <%= image_placeholder width: 200, height: 200, text: 'Avatar', class: 'avatar' %>
+                <%= render_member_avatar(member) %>
               </div>
               <div class="name">
                 <span><%= member.name %></span>

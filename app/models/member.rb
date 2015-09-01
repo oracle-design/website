@@ -5,4 +5,6 @@ class Member < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   as_enum :profession, [:designer, :developer, :marketing]
+
+  mount_uploader :avatar, MemberAvatarUploader
 end
