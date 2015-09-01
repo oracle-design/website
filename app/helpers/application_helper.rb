@@ -61,6 +61,8 @@ module ApplicationHelper
       icon 'wordpress'
     when :youtube
       icon 'youtube'
+    when :self_hosted_blog
+      icon 'rss-square'
     end
   end
 
