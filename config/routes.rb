@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'prototype#index'
   resources :service_forms, only: [:create]
 
-  # get '/.well-known/acme-challenge/:id' => 'prototype#letsencrypt'
+  get '/.well-known/acme-challenge/:id' => 'prototype#letsencrypt'
 
   namespace :member do
     root 'members#social_services'
