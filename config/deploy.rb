@@ -2,7 +2,7 @@
 lock '~>3.4.0'
 
 set :application, 'odd-website'
-set :repo_url, 'git@repos.oddesign.expert:oracle-design/odd-website.git'
+set :repo_url, 'git@github.com:oracle-design/website.git'
 set :deploy_to, '/home/deployer/websites/odd-website'
 
 set :linked_files, %w{config/database.yml}
