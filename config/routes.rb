@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount LetsencryptPlugin::Engine, at: '/'
+
   devise_for :members, controllers: {registrations: 'registrations'}
   root 'prototype#index'
   resources :service_forms, only: [:create]

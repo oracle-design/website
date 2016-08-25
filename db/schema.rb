@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150901021540) do
+ActiveRecord::Schema.define(version: 20160825135105) do
+
+  create_table "letsencrypt_plugin_challenges", force: :cascade do |t|
+    t.text     "response",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "letsencrypt_plugin_settings", force: :cascade do |t|
+    t.text     "private_key", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "members", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

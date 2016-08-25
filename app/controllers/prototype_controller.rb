@@ -5,6 +5,6 @@ class PrototypeController < ApplicationController
   end
 
   def letsencrypt
-    render text: '6ySsUq9KB0BXV-heinj1n9YIMJckJCxTNYacai91XCI.AWJxdJEU0yjjycPFNBU9ZHj-_XcRknJRsIplUXpacoI'
+    render text: '4AEXX5O-e1PoQw-ccDY_YS56Ps_nO2gR8_69-clCA6s.AWJxdJEU0yjjycPFNBU9ZHj-_XcRknJRsIplUXpacoI'
   end
 end
