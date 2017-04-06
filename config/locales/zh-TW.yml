@@ -271,10 +271,10 @@ zh-TW:
       identity_design: '整體視覺設計 Identity Design'
       marketing_strategies: '行銷策略 Marketing Strategies'
     budget_range:
-      two_hundred_thousand: '200,000 ↑'
-      three_hundred_thousand: '300,000'
       six_hundred_thousand: '600,000'
       one_million: '1,000,000'
+      three_million: '3,000,000'
+      five_million: '5,000,000'
     profession:
       designer: '設計師'
       developer: '工程師'
